@@ -2,6 +2,7 @@ class Turn {
     constructor(playerGuess, card) {
         this.playerGuess = playerGuess;
         this.card = card;
+        
     }
 
     returnGuess() {
