@@ -14,17 +14,4 @@ class Game {
       util.main(round);
   }
 }
-
-class Turn {
-  constructor(playerGuess, ) {
-
-  }
-  returnGuess() {
-
-  }
-}
-
-class Deck {
-  constructor () {}
-}
-module.exports = Game, Turn;
+module.exports = Game;
