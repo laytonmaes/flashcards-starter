@@ -4,7 +4,9 @@ const Card = require("../src/Card");
 
 class Round {
     constructor (deck) {
-        this.currentCard = deck.cards[0];
+        this.deck = deck;
+        this.currentCardIndex = 0;
+        this.currentCard = this.deck.cards[this.currentCardIndex];
         this.turns = 0;
         this.incorrectGuesses = 0;
     }
@@ -12,6 +14,10 @@ class Round {
     takeTurn(playerGuess) {
         const turn = new Turn(playerGuess, this.currentCard)
         this.turns += 1;
+        if(this.currentCardIndex < this.deck.length) {
+            this.currentCardIndex += 1
+            this.currentCard = this.deck.cards[this.currentCardIndex]
+        }
         if(!turn.evaluateGuess()) {
             this.incorrectGuesses += 1;
         };

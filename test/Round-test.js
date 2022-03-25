@@ -55,8 +55,9 @@ describe("Round", function() {
         const round = new Round(deck);
 
         const turn1 = round.takeTurn("open");
+        console.log(round.currentCard)
         const turn2 = round.takeTurn("sea otter");
-
+        console.log(round.currentCard)
         let  percentCorrect = round.calculatePercentCorrect()
         expect(percentCorrect).to.equal(50);
 
@@ -84,5 +85,9 @@ describe("Round", function() {
         const roundEnd = round.endRound()
 
         expect(roundEnd).to.equal("** Round over! ** You answered 50% of the questions correctly!")
+    })
+
+    it("should iterate through deck data set", function() {
+
     })
 })
